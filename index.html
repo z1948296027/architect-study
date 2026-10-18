@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f8f5">
+  <title>架构速学</title>
+  <link rel="stylesheet" href="styles.css?v=11">
+  <script src="assets/lucide.min.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">A</div>
+        <div>
+          <strong>架构速学</strong>
+          <span>系统架构设计师</span>
+        </div>
+        <button class="icon-button mobile-only" id="closeSidebar" aria-label="关闭课时目录" title="关闭">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <nav class="main-nav" aria-label="主导航">
+        <button class="nav-item active" data-view="dashboard" title="速学">
+          <i data-lucide="gauge"></i><span>速学</span>
+        </button>
+        <button class="nav-item" data-view="review" title="复习">
+          <i data-lucide="brain"></i><span>复习</span><b id="reviewCount">0</b>
+        </button>
+        <button class="nav-item" data-view="courses" title="全部课时">
+          <i data-lucide="library"></i><span>全部课时</span>
+        </button>
+        <button class="nav-item" data-view="essay" title="论文">
+          <i data-lucide="file-pen-line"></i><span>论文</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-heading">
+        <span>知识课时</span>
+        <span id="courseProgressLabel">0 / 32</span>
+      </div>
+      <div class="course-nav" id="courseNav"></div>
+
+      <div class="source-mini">
+        <img src="assets/book-cover.png" alt="《系统架构设计师考试32小时通关》封面">
+        <div>
+          <strong>内容来源</strong>
+          <span>32 小时通关 · 第 2 版</span>
+        </div>
+      </div>
+    </aside>
+
+    <div class="sidebar-scrim" id="sidebarScrim"></div>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="icon-button mobile-only" id="openSidebar" aria-label="打开课时目录" title="课时目录">
+          <i data-lucide="menu"></i>
+        </button>
+        <button class="icon-button sidebar-toggle" id="sidebarToggle" aria-label="收起侧边栏" aria-controls="sidebar" aria-expanded="true" title="收起侧边栏">
+          <i data-lucide="chevrons-left"></i>
+        </button>
+        <div class="search-wrap">
+          <i data-lucide="search"></i>
+          <input id="globalSearch" type="search" placeholder="搜索概念、公式、架构模式…" autocomplete="off">
+          <div class="search-results" id="searchResults" hidden></div>
+        </div>
+        <div class="top-stats">
+          <span><i data-lucide="check-circle-2"></i><b id="masteredCount">0</b> 已掌握</span>
+          <span><i data-lucide="flame"></i><b id="streakCount">0</b> 连续天</span>
+        </div>
+      </header>
+
+      <section class="view active" id="dashboardView"></section>
+      <section class="view" id="coursesView"></section>
+      <section class="view" id="courseView"></section>
+      <section class="view" id="reviewView"></section>
+      <section class="view" id="essayView"></section>
+    </main>
+
+    <nav class="mobile-nav mobile-only" aria-label="移动端主导航">
+      <button class="active" data-view="dashboard"><i data-lucide="gauge"></i><span>速学</span></button>
+      <button data-view="review"><i data-lucide="brain"></i><span>复习</span></button>
+      <button data-view="courses"><i data-lucide="library"></i><span>课时</span></button>
+      <button data-view="essay"><i data-lucide="file-pen-line"></i><span>论文</span></button>
+    </nav>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data.js?v=7"></script>
+  <script src="phase4-data.js?v=2"></script>
+  <script src="phase5-data.js?v=1"></script>
+  <script src="phase6-data.js?v=1"></script>
+  <script src="essay-data.js?v=8"></script>
+  <script src="essay.js?v=5"></script>
+  <script src="app.js?v=12"></script>
+</body>
+</html>
